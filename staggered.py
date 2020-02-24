@@ -54,7 +54,12 @@ for i in range(0,nx+2):
         yp = (j-0.5)*dy
         yv = yp + dy/2.
         yu = yp
-        plt.plot([xp],[yp], '.k')
+        corner = False
+        if(   i == 0    and j == 0    ): corner = True
+        elif( i == 0    and j == ny+1 ): corner = True
+        elif( i == nx+1 and j == 0    ): corner = True
+        elif( i == nx+1 and j == ny+1 ): corner = True
+        if(not corner): plt.plot([xp],[yp], '.k')
         if( i < nx+1 ): plt.plot([xu],[yu], '>r')
         if( j < ny+1 ): plt.plot([xv],[yv], '^g')
         x0p = (xp-lx/2)/dx
@@ -93,9 +98,9 @@ for i in range(0,nx+2):
         if(syu != 0.): fyu += str(Fraction(abs(y0u)))
         if(sxv != 0.): fxv += str(Fraction(abs(x0v)))
         if(syv != 0.): fyv += str(Fraction(abs(y0v)))
-        plt.text(xp+eps,yp+eps,'i'+fxp+','+'j'+fyp,fontsize=6,color='k')
-        if( i < nx+1 ): plt.text(xu+eps,yu+eps,'i'+fxu+','+'j'+fyu,fontsize=6,color='r')
-        if( j < ny+1 ): plt.text(xv+eps,yv+eps,'i'+fxv+','+'j'+fyv,fontsize=6,color='g')
+        if( not corner ): plt.text(xp+eps,yp+eps,'i'+fxp+','+'j'+fyp,fontsize=6,color='k')
+        if(  i < nx+1  ): plt.text(xu+eps,yu+eps,'i'+fxu+','+'j'+fyu,fontsize=6,color='r')
+        if(  j < ny+1  ): plt.text(xv+eps,yv+eps,'i'+fxv+','+'j'+fyv,fontsize=6,color='g')
 epsx = dx/4.
 plt.gca().set_xlim([-dx/2-epsx, lx+dx/2.+epsx])
 epsy = dy/4.
