@@ -1,2 +1,1 @@
-# plot_staggered_grid
-plots a staggered grid using matplotlib
+This python script plots a staggered grid (Arlow & Welch) that is often used in CFD.
