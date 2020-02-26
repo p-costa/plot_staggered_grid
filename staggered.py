@@ -101,6 +101,9 @@ for i in range(0,nx+2):
         if( not corner ): plt.text(xp+eps,yp+eps,'i'+fxp+','+'j'+fyp,fontsize=6,color='k')
         if(  i < nx+1  ): plt.text(xu+eps,yu+eps,'i'+fxu+','+'j'+fyu,fontsize=6,color='r')
         if(  j < ny+1  ): plt.text(xv+eps,yv+eps,'i'+fxv+','+'j'+fyv,fontsize=6,color='g')
+        #if( not corner ): plt.text(xp+eps,yp+eps,r'$p_{'+'i'+fxp+','+'j'+fyp+'}$',fontsize=6,color='k')
+        #if(  i < nx+1  ): plt.text(xu+eps,yu+eps,r'$u_{'+'i'+fxu+','+'j'+fyu+'}$',fontsize=6,color='r')
+        #if(  j < ny+1  ): plt.text(xv+eps,yv+eps,r'$v_{'+'i'+fxv+','+'j'+fyv+'}$',fontsize=6,color='g')
 epsx = dx/4.
 plt.gca().set_xlim([-dx/2-epsx, lx+dx/2.+epsx])
 epsy = dy/4.
